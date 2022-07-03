@@ -1,0 +1,16 @@
+<form [formGroup]="loginForm">
+  <mat-card class="login">
+    <h3>Login</h3>
+    <mat-form-field>
+      <input type="text" formControlName="email" matInput placeholder="email" name="nvName">
+    </mat-form-field>
+    <mat-error *ngIf="loginForm.get('email')?.invalid">{{getEmailErrorMessage()}}</mat-error>
+    <br>
+    <mat-form-field>
+      <input type="password" formControlName="password" matInput placeholder="password" name="nvPassword">
+    </mat-form-field>
+    <mat-error *ngIf="loginForm.get('password')?.invalid">{{getPWErrorMessage()}}</mat-error>
+    <br>
+    <button mat-raised-button color="primary" (click)="login()" [disabled]="!loginForm.valid">Login</button>
+  </mat-card>
+</form>

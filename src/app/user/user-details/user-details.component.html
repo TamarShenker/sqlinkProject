@@ -1,0 +1,8 @@
+<mat-card>
+<h1 mat-dialog-title>User Details</h1>
+<div class="mat-card-content" *ngIf="userSubject$  | async as userDetails">
+  <div *ngFor="let item of userDetails | keyvalue">
+    <b>{{item.key}}</b>:{{item.value}}
+  </div>
+</div>
+</mat-card>
